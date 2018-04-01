@@ -29,8 +29,8 @@ deltaTime = 1
 force :: Mass -> Acceleration -> Force
 force m a = m * a
 
-forceOfGravity :: Mass -> Force
-forceOfGravity m = m * (-9.81)
+gravityAcc :: Acceleration
+gravityAcc = (-9.81)
 
 time :: Time
 time = Time 1
@@ -44,9 +44,9 @@ calcVelocity p =
     where
         xV = x $ velocity p
         yV = y $ velocity p
-        force = forceOfGravity $ mass p
+        f = force (mass p) gravityAcc
         xAccerlation = (0 / mass p) * deltaTime
-        yAccerlation = (force / mass p) * deltaTime
+        yAccerlation = (f / mass p) * deltaTime
 
 calcPosition :: Particle -> Particle
 calcPosition p = 
