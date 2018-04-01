@@ -23,6 +23,7 @@ type Mass = Double
 type Acceleration = Double
 type Force = Double
 
+
 deltaTime :: Double
 deltaTime = 1
 
@@ -30,10 +31,10 @@ force :: Mass -> Acceleration -> Force
 force m a = m * a
 
 gravityAcc :: Acceleration
-gravityAcc = (-9.81)
+gravityAcc = -9.81
 
-time :: Time
-time = Time 0 
+startingTime :: Time
+startingTime = Time 0 
 
 calcVelocity :: Particle -> Particle
 calcVelocity p = 
@@ -80,5 +81,5 @@ run particles t = do
 
 main :: IO ()
 main = do
-    forever $ run [particle1] time
+    forever $ run [particle1] startingTime
 

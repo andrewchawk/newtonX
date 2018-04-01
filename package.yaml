@@ -24,6 +24,7 @@ dependencies:
 
 library:
   source-dirs: src
+  expoosed-modules: VectorMaths
 
 executables:
   newtonX:
@@ -37,7 +38,7 @@ executables:
     - NewtonianModel
 
 tests:
-  NewtonianModel-test:
+  newtonX-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
