@@ -61,7 +61,7 @@ updateParticle = calcPosition . calcVelocity
 updateTime :: Time -> Time
 updateTime t = Time ((getTime t) + 1)
 
-particle1 = Particle 1 (Vector2 10 10000) (Vector2 0 10) 1
+particle1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
 
 run :: [Particle] -> Time -> IO b
 run particles t = do
