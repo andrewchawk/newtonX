@@ -19,7 +19,7 @@ This says that there is a particle at position (x: 10, y: 20) with a velocity (x
 Available in `Simulation.Simulate` are two functions, `run` and `step`. `run` will run through the simulation, never stopping; it takes a list of particles, a time object, and some time to sleep for in microseconds.
 
 ```
-import Simulation.Simulation
+import Simulation.Simulate
 
 startingTime :: Time
 startingTime = Time 0
@@ -46,7 +46,7 @@ Time = {getTime = 2.0}
 Alternatively, you can use `step`, specifying the particles and number of times to run through the simulation.
 
 ```
-import Simulation.Simulation
+import Simulation.Simulate
 
 p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
 p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
