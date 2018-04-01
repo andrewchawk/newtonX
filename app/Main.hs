@@ -29,7 +29,7 @@ deltaTime = 1
 force :: Mass -> Acceleration -> Force
 force m a = m * a
 
-forceOfGravity :: Double -> Double
+forceOfGravity :: Mass -> Force
 forceOfGravity m = m * (-9.81)
 
 time :: Time
