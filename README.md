@@ -6,9 +6,13 @@ Wanted to call this PhysX, but Nvidia already have a physics engine by that name
 
 ## Usage
 
+### Particles (Particle.Particle)
+
 A particle consists of a position (a Vector2), a velocity (a Vector2), and a mass (a double). To create a particle, use the `Particle` data type:
 
 ```
+import Particle.Particle
+
 let p1 = Particle (Vector2 10 20) (Vector2 5 0) 2
 ```
 
