@@ -66,20 +66,24 @@ updateParticle = calcPosition . calcVelocity
 updateTime :: Time -> Time
 updateTime t = Time $ (getTime t) + 1
 
-particle1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
-particle2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
+p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
+p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
 
-run :: [Particle] -> Time -> IO b
-run particles t = do
-    let newParticles = updateParticle <$> particles
+step :: [Particle] -> Int -> [Particle]
+step particles n = join $ take n $ iterate ((<$>) updateParticle) particles
+
+run :: [Particle] -> Time -> Int -> IO b
+run particles t st = do
+    let newParticles = step particles 1
         newT = updateTime t
     putStrLn "\n"
     mapM_ print newParticles
     print newT
-    threadDelay 1000000
-    run newParticles newT
+    threadDelay st
+    run newParticles newT st
 
 main :: IO ()
 main = do
-    forever $ run [particle1] startingTime
+    let sleepTime = 1000000
+    forever $ run [p1] startingTime sleepTime
 
