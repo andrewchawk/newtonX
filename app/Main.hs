@@ -17,7 +17,7 @@ data Particle = Particle {
                          }
                          deriving (Show)
 
-data Time = Time { getTime :: Int } deriving (Show)
+data Time = Time { getTime :: Double } deriving (Show)
 
 type Mass = Double
 type Acceleration = Double
@@ -63,7 +63,7 @@ updateParticle :: Particle -> Particle
 updateParticle = calcPosition . calcVelocity
 
 updateTime :: Time -> Time
-updateTime t = Time ((getTime t) + 1)
+updateTime t = Time $ (getTime t) + 1
 
 particle1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
 
