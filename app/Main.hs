@@ -33,7 +33,7 @@ gravityAcc :: Acceleration
 gravityAcc = (-9.81)
 
 time :: Time
-time = Time 1
+time = Time 0 
 
 calcVelocity :: Particle -> Particle
 calcVelocity p = 
@@ -66,11 +66,13 @@ updateTime :: Time -> Time
 updateTime t = Time $ (getTime t) + 1
 
 particle1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
+particle2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
 
 run :: [Particle] -> Time -> IO b
 run particles t = do
     let newParticles = updateParticle <$> particles
         newT = updateTime t
+    putStrLn "\n"
     mapM_ print newParticles
     print newT
     threadDelay 1000000
