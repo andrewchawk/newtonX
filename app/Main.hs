@@ -74,7 +74,7 @@ step particles n = join $ take n $ iterate ((<$>) updateParticle) particles
 
 run :: [Particle] -> Time -> Int -> IO b
 run particles t st = do
-    let newParticles = step particles 1
+    let newParticles = updateParticle <$> particles
         newT = updateTime t
     putStrLn "\n"
     mapM_ print newParticles
