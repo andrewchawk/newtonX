@@ -46,6 +46,8 @@ Time = {getTime = 2.0}
 Alternatively, you can use `step`, specifying the particles and number of times to run through the simulation.
 
 ```
+import Simulation.Simulation
+
 p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
 p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
 
