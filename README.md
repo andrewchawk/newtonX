@@ -6,6 +6,15 @@ Wanted to call this PhysX, but Nvidia already have a physics engine by that name
 
 ## Usage
 
+A particle consists of a position (a Vector2), a velocity (a Vector2), and a mass (a double). To create a particle, use the `Particle` data type:
+
+```
+let p1 = Particle (Vector2 10 20) (Vector2 5 0) 2
+```
+
+This says that there is a particle at position (x: 10, y: 20) with a velocity (x: 5, y: 0) and a mass of 2.
+
+
 At the moment, you can run a simulation running `main` in ghci or running the executable (`stack exec newtonX`) which will step through the simulation with a second gap between each step without ever stopping. 
 
 ```
@@ -28,13 +37,9 @@ which will run through the simulation 10 times for particles 1 and 2.
 [Particle {pid = 1, position = Vector2 {x = 10.0, y = 10000.0}, velocity = Vector2 {x = 0.0, y = 0.0},mass = 1.0},Particle {pid = 2, position = Vector2 {x = 10.0, y = 100000.0}, velocity = Vector2 {x = 0.0, y = 0.0}, mass = 1.0},Particle {pid = 1, position = Vector2 {x = 10.0, y = 9990.19}, velocity = Vector2 {x = 0.0, y = -9.81}, mass = 1.0},Particle {pid = 2, position = Vector2 {x = 10.0, y = 99990.19}, velocity = Vector2 {x = 0.0, y = -9.81}, mass = 1.0},Particle {pid = 1, position = Vector2 {x = 10.0, y = 9970.57}, velocity = Vector2 {x = 0.0, y = -19.62}, mass = 1.0},Particle {pid = 2, position = Vector2 {x = 10.0, y = 99970.57}, velocity = Vector2 {x = 0.0, y = -19.62}, mass = 1.0},Particle {pid = 1, position = Vector2 {x = 10.0, y = 9941.14}, velocity = Vector2 {x = 0.0, y = -29.43}, mass = 1.0}, Particle {pid = 2, position = Vector2 {x = 10.0, y = 99941.14000000001}, velocity = Vector2 {x = 0.0, y = -29.43}, mass = 1.0},Particle {pid = 1, position = Vector2 {x = 10.0, y = 9901.9}, velocity = Vector2 {x = 0.0, y = -39.24}, mass = 1.0},Particle {pid = 2, position = Vector2 {x = 10.0, y = 99901.90000000001}, velocity = Vector2 {x = 0.0, y = -39.24}, mass = 1.0}]
 ```
 
-A particle consists of a position (a Vector2), a velocity (a Vector2), and a mass (a double).
+## Build 
 
-```
-let p1 = Particle (Vector2 10 20) (Vector2 5 0) 2
-```
-
-says that there is a particle at position (x: 10, y: 20) with a velocity (x: 5, y: 0) and a mass of 2.
+Build with stack:
 
 ```
 stack build
