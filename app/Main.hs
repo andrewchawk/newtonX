@@ -23,7 +23,6 @@ type Mass = Double
 type Acceleration = Double
 type Force = Double
 
-
 deltaTime :: Double
 deltaTime = 1
 
@@ -66,9 +65,6 @@ updateParticle = calcPosition . calcVelocity
 updateTime :: Time -> Time
 updateTime t = Time $ (getTime t) + 1
 
-p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
-p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
-
 step :: [Particle] -> Int -> [Particle]
 step particles n = join $ take n $ iterate ((<$>) updateParticle) particles
 
@@ -81,6 +77,9 @@ run particles t st = do
     print newT
     threadDelay st
     run newParticles newT st
+
+p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
+p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1
 
 main :: IO ()
 main = do
