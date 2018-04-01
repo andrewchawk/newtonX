@@ -4,8 +4,8 @@ import Control.Monad
 import Control.Concurrent
 
 data Vector2 = Vector2 {
-                       x :: Float,
-                       y :: Float
+                       x :: Double,
+                       y :: Double
                        }
                        deriving (Show)
 
@@ -13,19 +13,22 @@ data Particle = Particle {
                          pid :: Int,
                          position :: Vector2,
                          velocity :: Vector2,
-                         mass :: Float 
+                         mass :: Mass 
                          }
                          deriving (Show)
 
 data Time = Time { getTime :: Int } deriving (Show)
 
-deltaTime :: Float
+type Mass = Double
+type Acceleration = Double
+
+deltaTime :: Double
 deltaTime = 1
 
-force :: Float
-force = 0
+force :: Mass -> Acceleration -> Force
+force m a = m * a
 
-forceOfGravity :: Float -> Float
+forceOfGravity :: Double -> Double
 forceOfGravity m = m * (-9.81)
 
 time :: Time
