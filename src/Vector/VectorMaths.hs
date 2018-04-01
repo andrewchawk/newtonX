@@ -1,4 +1,4 @@
-module VectorMaths where
+module Vector.VectorMaths where
 
 data Vector2 = Vector2 {
                        x :: Double,
