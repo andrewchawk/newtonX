@@ -21,6 +21,7 @@ data Time = Time { getTime :: Int } deriving (Show)
 
 type Mass = Double
 type Acceleration = Double
+type Force = Double
 
 deltaTime :: Double
 deltaTime = 1
