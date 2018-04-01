@@ -2,7 +2,13 @@
 
 This is a Newtonian, rigid body physics engine.
 
-Wanted to call this PhysX, but Nvidia already have a physics engine by that name. 
+The engine is Newtonian because it implements Newton's three laws of motion: 
+
+1. Objects persist in their current state unless compelled to change by external forces.
+2. Force is equal to mass times accerleration.
+3. Actions imply equal and opposite reactions.
+
+(Wanted to call this PhysX, but Nvidia already have a physics engine by that name.)
 
 ## Usage
 
