@@ -16,7 +16,7 @@ This says that there is a particle at position (x: 10, y: 20) with a velocity (x
 
 ### Simulation (Simulation.Simulation)
 
-Available in `Simulation.Simulation` are two functions, `run` and `step`. `run` will run through the simulation, never stopping; it takes a list of particles, a time object, and some time to sleep for in microseconds.
+Available in `Simulation.Simulate` are two functions, `run` and `step`. `run` will run through the simulation, never stopping; it takes a list of particles, a time object, and some time to sleep for in microseconds.
 
 ```
 import Simulation.Simulation

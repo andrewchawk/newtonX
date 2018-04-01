@@ -1,18 +1,14 @@
-module main where
+module Main where
 
 import Control.Monad
 import Control.Concurrent
 
 import Particle.Particle
 import Vector.Vector
-
-data Time = Time { getTime :: Double } deriving (Show)
+import Simulation.Simulate 
 
 startingTime :: Time
 startingTime = Time 0 
-
-updateTime :: Time -> Time
-updateTime t = Time $ (getTime t) + 1
 
 p1 = Particle 1 (Vector2 10 10000) (Vector2 0 0) 1
 p2 = Particle 2 (Vector2 10 100000) (Vector2 0 0) 1

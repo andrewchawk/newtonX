@@ -24,7 +24,11 @@ dependencies:
 
 library:
   source-dirs: src
-  exposed-modules: Vector.VectorMaths
+  exposed-modules: 
+    - Vector.VectorMaths
+    - Vector.Vector
+    - Simulation.Simulate
+    - Particle.Particle
 
 executables:
   newtonX:
