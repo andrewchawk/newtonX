@@ -1,27 +1,8 @@
 module Particle.Particle where
 
 import Vector.Vector
-
-data Particle = Particle {
-                         pid :: Int,
-                         position :: Vector2,
-                         velocity :: Vector2,
-                         mass :: Mass 
-                         }
-                         deriving (Show)
-
-type Mass = Double
-type Acceleration = Double
-type Force = Double
-
-force :: Mass -> Acceleration -> Force
-force m a = m * a
-
-gravityAcc :: Acceleration
-gravityAcc = -9.81
-
-deltaTime :: Double
-deltaTime = 1
+import Particle.Types
+import Rules.Constants
 
 calcVelocity :: Particle -> Particle
 calcVelocity p = 

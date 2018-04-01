@@ -2,6 +2,7 @@ module Simulation.Simulate where
 
 import Control.Concurrent
 import Control.Monad
+import Particle.Types
 import Particle.Particle
 
 data Time = Time { getTime :: Double } deriving (Show)

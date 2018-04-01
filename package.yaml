@@ -28,7 +28,9 @@ library:
     - Vector.VectorMaths
     - Vector.Vector
     - Simulation.Simulate
+    - Particle.Types
     - Particle.Particle
+    - Rules.Constants
 
 executables:
   newtonX:

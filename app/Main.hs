@@ -3,6 +3,7 @@ module Main where
 import Control.Monad
 import Control.Concurrent
 
+import Particle.Types
 import Particle.Particle
 import Vector.Vector
 import Simulation.Simulate 
